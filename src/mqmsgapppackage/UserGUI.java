@@ -6,6 +6,8 @@ package mqmsgapppackage;
 
 import java.awt.*;
 import java.awt.event.*;
+
+import javax.jms.JMSException;
 import javax.swing.*;
 import javax.swing.event.*;
 
@@ -25,21 +27,27 @@ public class UserGUI extends JPanel {
       //construct components
       jcomp1 = new JButton ("Write message to MQ queue");
 //      make this button do something.
-      jcomp1.addActionListener(new ActionListener() 
+      jcomp1.addActionListener(new ActionListener()
       {
-          public void actionPerformed(ActionEvent e) 
+          public void actionPerformed(ActionEvent e)
           {
             // Code to be executed when Option  is selected
+        	  System.out.println("Write message to MQ queue button pressed");
 //        	  instantiate the queuewriter before we can use it
         	  QueueWriter queuewriter = new QueueWriter();
 //        	call the queue writer.
-        	  queuewriter.queueWriter();
+        	  try {
+				queuewriter.queueWriter();
+			} catch (JMSException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
           }
-      }
+      });
       
-      jcomp2 = new JButton ("Button 2");
-      jcomp3 = new JButton ("Button 3");
-      jcomp4 = new JButton ("Button 4");
+      jcomp2 = new JButton ("Read messages from MQ queue");
+      jcomp3 = new JButton ("Write messages to AC over REST API");
+      jcomp4 = new JButton ("Read messages from AC over REST API");
 
       //adjust size and set layout
       setPreferredSize (new Dimension (300, 245));
