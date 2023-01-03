@@ -3,7 +3,7 @@ package mqmsgapppackage;
 import javax.jms.Connection;
 import javax.jms.ConnectionFactory;
 import javax.jms.Destination;
-
+import javax.jms.JMSException;
 import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
@@ -14,19 +14,15 @@ import javax.jms.TextMessage;
 // added above import line as part of troubleshooting, simple because I see it in a lot of samples that use ActiveMQConnectionFactory.
 // such as 
 //C:\Dropbox\Appz\ActiveMQ Artemis\apache-artemis-2.27.1\examples\features\clustered\queue-message-redistribution\src\main\java\org\apache\activemq\artemis\jms\example\QueueMessageRedistributionExample.java
-// but it made no difference. Nontheless leaving it here and I can try removing it after teh code is working.
+// but it made no difference. Nonetheless leaving it here and I can try removing it after teh code is working.
 
 import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
 
-public class QueueWriter throws JMSException {
-//	This shows the error:
-//	
-//	Multiple markers at this line
-//	- Syntax error on tokens, RecordHeaderName expected instead
-//	- Syntax error, insert "}" to complete Block
+public class QueueWriter {
+
 
 	
-		void queueWriter() {
+		void queueWriter() throws JMSException {
 
 		System.out.println("MQ Messaging App launched OK");
 		  
@@ -67,5 +63,3 @@ public class QueueWriter throws JMSException {
 //	    		https://www.rememberthemilk.com/app/#list/49260999/925119318
 		}
 }
-// why does this return this error?
-//Syntax error on token "}", delete this token
