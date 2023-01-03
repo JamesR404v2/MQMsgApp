@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Created-By: Maven JAR Plugin 3.2.2
+Build-Jdk-Spec: 11
+Specification-Title: ActiveMQ Artemis JMS Client
+Specification-Version: 2.27
+Specification-Vendor: The Apache Software Foundation
+Implementation-Title: ActiveMQ Artemis JMS Client
+Implementation-Version: 2.27.1
+Implementation-Vendor: The Apache Software Foundation
+
