@@ -19,6 +19,12 @@ import javax.jms.TextMessage;
 import org.apache.activemq.artemis.jms.client.ActiveMQConnectionFactory;
 
 public class QueueWriter throws JMSException {
+//	This shows the error:
+//	
+//	Multiple markers at this line
+//	- Syntax error on tokens, RecordHeaderName expected instead
+//	- Syntax error, insert "}" to complete Block
+
 	
 		void queueWriter() {
 
@@ -61,4 +67,5 @@ public class QueueWriter throws JMSException {
 //	    		https://www.rememberthemilk.com/app/#list/49260999/925119318
 		}
 }
-
+// why does this return this error?
+//Syntax error on token "}", delete this token
